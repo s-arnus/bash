@@ -58,27 +58,23 @@ function fib {
 	fibon=(0 1)
 	while [ $count -le $1 ]
 	do
-	
 		if [[ $count -gt 1 ]]
 		then
-      echo "count is equal to $count"
-      #If only first number is needed
-      if [[ $1 -eq 0 ]]
-      then
-        echo "Fibon 0 is ${fibon[$count]}"
-      #Else if only two numbers are needed
-      elif [[ $1 -eq 1 ]]
-      then
-        echo "Fibon 1 is ${fibon[$count]}"
-      #Else add new fibonacci number to the array
-      else
-        prev=$(expr $count - 1)
-        prev2=$(expr $count - 2)
-        new=$(expr ${fibon[$prev]} + ${fibon[$prev2]})
-        echo "new is $new"
-        fibon+=($new)
-        echo "Fibon $count is ${fibon[$count]}"
-      fi
+      			#If only first number is needed
+			if [[ $1 -eq 0 ]]
+			then
+				echo "Fibon 0 is ${fibon[$count]}"
+			#Else if only two numbers are needed
+			elif [[ $1 -eq 1 ]]
+			then
+				echo "Fibon 1 is ${fibon[$count]}"
+			#Else add new fibonacci number to the array
+			else
+				rev=$(expr $count - 1)
+				prev2=$(expr $count - 2)
+				new=$(expr ${fibon[$prev]} + ${fibon[$prev2]})
+				fibon+=($new)
+		      	fi
 		fi
 		let count=$count+1
 	done
