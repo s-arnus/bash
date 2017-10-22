@@ -1,6 +1,7 @@
 #!/bin/bash
 #Solutions to exercises From a Coursera course "The Unix Workbench" - Johns Hopkins University
 #Write a function called plier which multiplies together a sequence of numbers.
+# test
 function plier {
 	local sum=1
 	for element in $@
@@ -60,7 +61,7 @@ function fib {
 	do
 		if [[ $count -gt 1 ]]
 		then
-      			#If only first number is needed
+			#If only first number is needed
 			if [[ $1 -eq 0 ]]
 			then
 				echo "Fibon 0 is ${fibon[$count]}"
@@ -74,7 +75,7 @@ function fib {
 				prev2=$(expr $count - 2)
 				new=$(expr ${fibon[$prev]} + ${fibon[$prev2]})
 				fibon+=($new)
-		      	fi
+			fi
 		fi
 		let count=$count+1
 	done
