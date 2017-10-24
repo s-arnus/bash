@@ -1,2 +1,2 @@
 # bash
-Bash scripts
+This repository contains bash scripts and examples
